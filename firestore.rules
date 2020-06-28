@@ -4,5 +4,15 @@ service cloud.firestore {
     match /{document=**} {
       allow read, write: if false;
     }
+    match /readOnly/{readOnlyId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /users/{userId} {
+      allow read: if (request.auth.uid == userId);
+    }
+    match /payments/{paymentId} {
+      allow read, write: if false;
+    }
   }
 }
