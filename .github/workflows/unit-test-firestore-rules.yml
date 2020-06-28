@@ -19,8 +19,13 @@ jobs:
         working-directory: ./test
         run: npm install
 
-      - name: Run Firebase emulators
-        run: firebase emulators:start
+      - name: Running Firebase emulators
+        run: firebase emulators:start &
+
+      - name: Waiting for Firebase emulators to be ready
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '30s'
 
       - name: Run unit tests
         working-directory: ./test
