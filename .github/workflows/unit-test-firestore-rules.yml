@@ -1,0 +1,21 @@
+name: unit-test-firestore-rules
+on: pull_request
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '10.x'
+
+      - name: Install dependencies
+        working-directory: ./test
+        run: npm install
+
+      - name: Run unit tests
+        working-directory: ./test
+        run: npm test

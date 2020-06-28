@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "Unit testing for poc-firebase-unit-testing project",
+  "main": "test.ts",
+  "scripts": {
+    "test": "tsc && mocha dist/test.js --exit"
+  },
+  "author": "Alfredo Vidueira",
+  "license": "ISC",
+  "devDependencies": {
+    "@firebase/testing": "0.20.5",
+    "@types/assert": "1.5.1",
+    "@types/mocha": "7.0.2",
+    "@types/node": "14.0.14",
+    "assert": "2.0.0",
+    "mocha": "8.0.1",
+    "tslint": "5.12.1",
+    "typescript": "3.3.3"
+  },
+  "dependencies": {}
+}
