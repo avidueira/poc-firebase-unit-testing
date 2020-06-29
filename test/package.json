@@ -4,6 +4,7 @@
   "description": "Unit testing for poc-firebase-unit-testing project",
   "main": "test.ts",
   "scripts": {
+    "emulators": "firebase emulators:start",
     "test": "tsc && mocha dist/test.js --exit"
   },
   "author": "Alfredo Vidueira",

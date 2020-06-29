@@ -25,7 +25,7 @@ jobs:
       - name: Waiting for Firebase emulators to be ready
         uses: jakejarvis/wait-action@master
         with:
-          time: '30s'
+          time: '15s'
 
       - name: Run unit tests
         working-directory: ./test
