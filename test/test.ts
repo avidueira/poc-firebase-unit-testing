@@ -16,6 +16,16 @@ function getAdminFirestore(): firebase.firestore.Firestore {
   return firebase.initializeAdminApp({projectId: MY_PROJECT_ID}).firestore();
 }
 
+// Before each test, we clear Firestore's data
+beforeEach(async () => {
+  await firebase.clearFirestoreData({projectId: MY_PROJECT_ID});
+});
+
+// After all tests are ran, we also clear Firestore's data
+after(async () => {
+  await firebase.clearFirestoreData({projectId: MY_PROJECT_ID});
+});
+
 describe('POC Firebase Unit Testing', () => {
 
   it('I\'m working?', () => {
